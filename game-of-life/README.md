@@ -1,4 +1,6 @@
-# MVP:
+
+# MVP
+
 [x] grid to display cells
 
 [x] minimum grid size of 25 x 25
@@ -29,9 +31,10 @@
 
 [x] buttons to start and stop the simulation
 
-[ ] buttons to clear the grid
+[x] buttons to clear the grid
 
 ## Algorithm
+
 For each cell in the current generation's grid:
 
 ---> examine state of all 8 neighbors
@@ -61,4 +64,4 @@ Yet to-do:
 [ ] Update readme with deployed link
 [ ] work on a random start initial fill
 [ ] work on getting the game to "wrap around" instead on ending at the sides/top/bottom
-
+[ ] check viewport meta in index.html

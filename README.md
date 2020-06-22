@@ -12,7 +12,8 @@ CS Build Week:  [CS Build week #1](https://github.com/LambdaSchool/CS-Build-Week
 4. Any dead cell with exactly three live neighbors becomes alive. (reproduction) 
 
 ## Turing Completeness 
-    A computing system is "Turing Complete" if it can perform arbitrary general purpose calculations.
+    A computing system is "Turing Complete" if it can
+    perform arbitrary general purpose calculations.
 While the Game of Life system isn't Turing Complete in its current form, given an infinite grid size<br />
 and unlimited computing resources (memory, CPU cycles, and storage) it could be considered Turing<br />
 Complete and the JavaScript language itself is generally considered Turing Complete.<br />

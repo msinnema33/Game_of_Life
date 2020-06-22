@@ -1,5 +1,5 @@
 const logic = (arr) => {
-    const updatedGrid = [];
+    const newGrid = [];
     for (let i = 0; i < arr.length; i++) {
       const row = [];
       for (let j = 0; j < arr.length; j++) {
@@ -18,10 +18,11 @@ const logic = (arr) => {
         else if (neighbors === 3) row.push(true);
         else row.push(false);
       }
-      updatedGrid.push(row);
+      newGrid.push(row);
     }
-  
-    return updatedGrid;
+    let counter = 0;
+    counter ++;
+    return newGrid;
   };
   
   export default logic;

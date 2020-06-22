@@ -200,15 +200,22 @@ const Game = (props) => {
           </div>
           <Button
             variant='contained'
-            color='information'
+            color='success'
             onClick={handlePlayButton}
             className={classes.gameSetting}
           >
             {playStatus}
           </Button>
-          <>
-            <p>Generation: "generation in curly braces"</p>
-          </>
+          <Button
+            variant='contained'
+            color='success'
+            onClick={() => setPresets('blank')}
+            className={classes.gameSetting}
+          >
+            Clear
+          </Button>
+            <p>Generation: "gen in curly brackets"</p>
+          
         </div>
       </Container>
     </div>
