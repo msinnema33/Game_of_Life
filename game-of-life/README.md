@@ -7,27 +7,27 @@
 
 [x] cell objects / components that have these props:
 
---> [x] current state (black == alive | white == dead)
+     [x] current state (black == alive | white == dead)
 
---> [x] clickable
+     [x] clickable
 
--------> [x] can be clicked to allow user to setup initial cell configuration
+     [x] can be clicked to allow user to setup initial cell configuration
 
--------> [ ] should NOT be clickable when simulation is running
+     [ ] should NOT be clickable when simulation is running
 
-[ ] cell objects should have these behaviours:
+[x] cell objects should have these behaviours:
 
----> [x] toggle state switch:
+     [x] toggle state switch:
 
--------> [x] switch between alive & dead either because:
+         [x] switch between alive & dead either because:
 
-------------> [x] user manually toggled cell before starting simulation
+         [x] user manually toggled cell before starting simulation
 
-------------> [x] simulation is running and the Rules of Life caused the cell to change state
+         [x] simulation is running and the Rules of Life caused the cell to change state
 
 [ ] text to display current generation # being displayed:
 
----> [ ] use a timeout function to build the next generation of cells & update the display at the chosen time interval
+     [ ] use a timeout function to build the next generation of cells & update the display at the chosen time interval
 
 [x] buttons to start and stop the simulation
 
@@ -37,19 +37,19 @@
 
 For each cell in the current generation's grid:
 
----> examine state of all 8 neighbors
+    > examine state of all 8 neighbors
 
----> apply Rules of Life to determine if this cell will change states (alive / dead)
+    > apply Rules of Life to determine if this cell will change states (alive / dead)
 
----> when the main loop completes:
+    > when the main loop completes:
 
-------> swap current and next grids
+    > swap current and next grids
 
-------> repeat until simulation is stopped
+        > repeat until simulation is stopped
 
----> uses double buffering to update grid with next generation
+    > uses double buffering to update grid with next generation
 
----> assume all edge cells are permanently dead OR wrap around to far side
+    > assume all edge cells are permanently dead OR wrap around to far side
 
 Yet to-do:
 [ ] update Material UI colors from the base
