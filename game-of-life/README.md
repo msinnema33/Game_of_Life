@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-CS Build Week:  [https://github.com/BrandyBecker/CS-Build-Week-1]
+CS Build Week:  [https://github.com/LambdaSchool/CS-Build-Week-1]
 
 
 ## Rules of the game
@@ -11,9 +11,9 @@ CS Build Week:  [https://github.com/BrandyBecker/CS-Build-Week-1]
 
 ## Turing Completeness 
     A computing system is "Turing Complete" if it can perform arbitrary general purpose calculations.
-While the Game of Life system isn't Turing Complete in its current form, given an infinite grid size
-and unlimited computing resources (memory, CPU cycles, and storage) it could be considered Turing
-Complete and the JavaScript language itself is generally considered Turing Complete.
+While the Game of Life system isn't Turing Complete in its current form, given an infinite grid size<br />
+and unlimited computing resources (memory, CPU cycles, and storage) it could be considered Turing<br />
+Complete and the JavaScript language itself is generally considered Turing Complete.<br />
     Taken from [https://en.wikipedia.org/wiki/Turing_completeness].    
 
 ## Celular automata
