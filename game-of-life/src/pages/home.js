@@ -8,26 +8,26 @@ const useStyles = makeStyles({
   container: {
     margin: '0 auto',
     maxWidth: '1024px',
-    height: '55vh',
+    height: '75vh',
   },
   title1: {
-    fontSize: '36px',
+    fontSize: '24px',
     display: 'block',
-    paddingTop: '20%',
+    paddingTop: '10%',
   },
   title2: {
-    fontSize: '128px',
+    fontSize: '64px',
   },
   link: {
     textDecoration: 'none',
   },
   homeButton: {
-    fontSize: '48px',
+    fontSize: '32px',
   },
   buttonContainer: {
     display: 'flex',
     justifyContent: 'space-around',
-    padding: '4% 20%',
+    padding: '2% 10%',
   },
 });
 

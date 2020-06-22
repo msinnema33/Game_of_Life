@@ -56,7 +56,7 @@ const Game = (props) => {
   const classes = useStyles();
 
   //set initial specs for the grid
-  const gridSize = 30;
+  const gridSize = 25;
   const [active, setActive] = useState(makeArray(gridSize));
   const [prefab, setPrefab] = useState('');
   const [speed, setSpeed] = useState(1);
@@ -192,12 +192,12 @@ const Game = (props) => {
               onChange={updateToPrefab}
             >
               <MenuItem value='blank'>Blank</MenuItem>
-              <MenuItem value='blinkers'>Blinker</MenuItem>
-              <MenuItem value='toads'>Toad</MenuItem>
-              <MenuItem value='beacons'>Beacon</MenuItem>
+              <MenuItem value='blinker'>Blinker</MenuItem>
+              <MenuItem value='toad'>Toad</MenuItem>
+              <MenuItem value='beacon'>Beacon</MenuItem>
               <MenuItem value='pulsar'>Pulsar</MenuItem>
-              <MenuItem value='penta'>Pentadecathlon</MenuItem>
-              <MenuItem value='space'>Spaceships</MenuItem>
+              <MenuItem value='pentadeca'>Pentadecathlon</MenuItem>
+              <MenuItem value='spaceship'>Spaceships</MenuItem>
             </Select>
           </FormControl>
           <div className={classes.gameSetting}>
