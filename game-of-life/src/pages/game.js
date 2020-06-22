@@ -18,7 +18,7 @@ import {
   blinker,
   toad,
   beacon,
-  pentagon,
+  pentadeca,
   pulsar,
   spaceship,
 } from '../presets/index';
@@ -56,7 +56,7 @@ const Game = (props) => {
   const classes = useStyles();
 
   //set initial specs for the grid
-  const gridSize = 25;
+  const gridSize = 30;
   const [active, setActive] = useState(makeArray(gridSize));
   const [prefab, setPrefab] = useState('');
   const [speed, setSpeed] = useState(1);
@@ -86,31 +86,31 @@ const Game = (props) => {
           return [...row];
         })
       );
-    //blinkers option
-    else if (prefab === 'blinkers')
+    //blinker option
+    else if (prefab === 'blinker')
       setActive(
         blinker.map((row) => {
           return [...row];
         })
       );
-    //toads option
-    else if (prefab === 'toads')
+    //toad option
+    else if (prefab === 'toad')
       setActive(
         toad.map((row) => {
           return [...row];
         })
       );
-    //beacons option
-    else if (prefab === 'beacons')
+    //beacon option
+    else if (prefab === 'beacon')
       setActive(
         beacon.map((row) => {
           return [...row];
         })
       );
-    //penta option
-    else if (prefab === 'penta')
+    //pentadeca option
+    else if (prefab === 'pentadeca')
       setActive(
-        pentagon.map((row) => {
+        pentadeca.map((row) => {
           return [...row];
         })
       );
@@ -121,8 +121,8 @@ const Game = (props) => {
           return [...row];
         })
       );
-    //space option
-    else if (prefab === 'space')
+    //spaceship option
+    else if (prefab === 'spaceship')
       setActive(
         spaceship.map((row) => {
           return [...row];
@@ -192,9 +192,9 @@ const Game = (props) => {
               onChange={updateToPrefab}
             >
               <MenuItem value='blank'>Blank</MenuItem>
-              <MenuItem value='blinkers'>Blinkers</MenuItem>
-              <MenuItem value='toads'>Toads</MenuItem>
-              <MenuItem value='beacons'>Beacons</MenuItem>
+              <MenuItem value='blinkers'>Blinker</MenuItem>
+              <MenuItem value='toads'>Toad</MenuItem>
+              <MenuItem value='beacons'>Beacon</MenuItem>
               <MenuItem value='pulsar'>Pulsar</MenuItem>
               <MenuItem value='penta'>Pentadecathlon</MenuItem>
               <MenuItem value='space'>Spaceships</MenuItem>
