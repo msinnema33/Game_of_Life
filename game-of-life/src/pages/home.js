@@ -45,7 +45,7 @@ const Home = (props) => {
         <Link to='/game' className={classes.link}>
           <Button
             variant='contained'
-            color='primary'
+            color='information'
             className={classes.homeButton}
           >
             Start
@@ -54,7 +54,7 @@ const Home = (props) => {
         <Link to='/about' className={classes.link}>
           <Button
             variant='contained'
-            color='primary'
+            color='information'
             className={classes.homeButton}
           >
             About

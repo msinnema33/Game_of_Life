@@ -14,13 +14,13 @@ import {
 } from '@material-ui/core';
 
 import {
+  beacon,
   blank,
   blinker,
-  toad,
-  beacon,
   pentadeca,
   pulsar,
   spaceship,
+  toad,
 } from '../presets/index';
 
 import logic from '../utils/logic';
@@ -60,7 +60,7 @@ const Game = (props) => {
   //set initial specs for the grid
   const gridSize = 30;
   const [active, setActive] = useState(makeArray(gridSize));
-  const [prefab, setPrefab] = useState('');
+  const [preset, setPresets] = useState('');
   const [speed, setSpeed] = useState(1);
   const [playStatus, setPlayStatus] = useState('Start');
 
@@ -75,62 +75,62 @@ const Game = (props) => {
     setActive(newArray);
   };
 
-  //handle dropdown prefab change
-  const updateToPrefab = (e) => {
-    setPrefab(e.target.value);
+  //handle dropdown change
+  const updateToPresets = (e) => {
+    setPresets(e.target.value);
   };
 
   useEffect(() => {
     //blank option
-    if (prefab === 'blank')
+    if (preset === 'blank')
       setActive(
         blank.map((row) => {
           return [...row];
         })
       );
     //blinker option
-    else if (prefab === 'blinker')
+    else if (preset === 'blinker')
       setActive(
         blinker.map((row) => {
           return [...row];
         })
       );
     //toad option
-    else if (prefab === 'toad')
+    else if (preset === 'toad')
       setActive(
         toad.map((row) => {
           return [...row];
         })
       );
     //beacon option
-    else if (prefab === 'beacon')
+    else if (preset === 'beacon')
       setActive(
         beacon.map((row) => {
           return [...row];
         })
       );
     //pentadeca option
-    else if (prefab === 'pentadeca')
+    else if (preset === 'pentadeca')
       setActive(
         pentadeca.map((row) => {
           return [...row];
         })
       );
     //pulsar option
-    else if (prefab === 'pulsar')
+    else if (preset === 'pulsar')
       setActive(
         pulsar.map((row) => {
           return [...row];
         })
       );
     //spaceship option
-    else if (prefab === 'spaceship')
+    else if (preset === 'spaceship')
       setActive(
         spaceship.map((row) => {
           return [...row];
         })
       );
-  }, [prefab]);
+  }, [preset]);
 
   const handlePlayButton = (e) => {
     playStatus === 'Start' ? setPlayStatus('Stop') : setPlayStatus('Start');
@@ -166,7 +166,7 @@ const Game = (props) => {
     }, [delay]);
   }
 
-  //make call to the server at each interval
+  //call the server at each interval
   useInterval(() => {
     if (playStatus === 'Stop') getLogic();
   }, 1000 / speed);
@@ -178,11 +178,11 @@ const Game = (props) => {
         <Grid active={active} update={update} additional={additional} />
         <div className={classes.gameControls}>
           <FormControl className={classes.formControl}>
-            <InputLabel id='prefab-selection'>Choose a Pattern</InputLabel>
+            <InputLabel id='prefab-selection'>Choose your Pattern</InputLabel>
             <Select
-              labelId='prefab-selection'
-              value={prefab}
-              onChange={updateToPrefab}
+              labelId='preset-selection'
+              value={preset}
+              onChange={updateToPresets}
             >
               <MenuItem value='blank'>Blank</MenuItem>
               <MenuItem value='blinker'>Blinker</MenuItem>
@@ -200,12 +200,15 @@ const Game = (props) => {
           </div>
           <Button
             variant='contained'
-            color='primary'
+            color='information'
             onClick={handlePlayButton}
             className={classes.gameSetting}
           >
             {playStatus}
           </Button>
+          <>
+            <p>Generation: "generation in curly braces"</p>
+          </>
         </div>
       </Container>
     </div>

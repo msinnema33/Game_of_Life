@@ -1,86 +1,64 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# MVP:
+[x] grid to display cells
 
-CS Build Week:  [https://github.com/LambdaSchool/CS-Build-Week-1]
+[x] minimum grid size of 25 x 25
 
+[x] cell objects / components that have these props:
 
-## Rules of the game
-1. Any live cell with fewer than two live neighbors dies. (underpopulation)
-2. Any live cell with two or three neighbors lives on to the next generation.
-3. Any live cell with more than three live neighbors dies. (overpopulation)
-4. Any dead cell with exactly three live neighbors becomes alive. (reproduction) 
+--> [x] current state (black == alive | white == dead)
 
-## Turing Completeness 
-    A computing system is "Turing Complete" if it can perform arbitrary general purpose calculations.
-While the Game of Life system isn't Turing Complete in its current form, given an infinite grid size<br />
-and unlimited computing resources (memory, CPU cycles, and storage) it could be considered Turing<br />
-Complete and the JavaScript language itself is generally considered Turing Complete.<br />
-    Taken from [https://en.wikipedia.org/wiki/Turing_completeness].    
+--> [x] clickable
 
-## Celular automata
+-------> [x] can be clicked to allow user to setup initial cell configuration
 
-## Available Scripts
+-------> [ ] should NOT be clickable when simulation is running
 
-In the project directory, you can run:
+[ ] cell objects should have these behaviours:
 
-### `yarn start`
+---> [x] toggle state switch:
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+-------> [x] switch between alive & dead either because:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+------------> [x] user manually toggled cell before starting simulation
 
-### `yarn test`
+------------> [x] simulation is running and the Rules of Life caused the cell to change state
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[ ] text to display current generation # being displayed:
 
-### `yarn build`
+---> [ ] use a timeout function to build the next generation of cells & update the display at the chosen time interval
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[x] buttons to start and stop the simulation
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+[ ] buttons to clear the grid
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Algorithm
+For each cell in the current generation's grid:
 
-### `yarn eject`
+---> examine state of all 8 neighbors
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+---> apply Rules of Life to determine if this cell will change states (alive / dead)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---> when the main loop completes:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+------> swap current and next grids
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+------> repeat until simulation is stopped
 
-## Learn More
+---> uses double buffering to update grid with next generation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---> assume all edge cells are permanently dead OR wrap around to far side
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Yet to-do:
+[ ] update Material UI colors from the base
+[ ] update Browser Tab text
+[ ] update favico
+[ ] Get Generation counter to work
+[ ] work on CSS
+[ ] work on media queries (responsive design)
+[ ] check and update accessability
+[ ] Add repo badges to readme
+[ ] Deploy to github pages/Heroku
+[ ] Update readme with deployed link
+[ ] work on a random start initial fill
+[ ] work on getting the game to "wrap around" instead on ending at the sides/top/bottom
 
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
