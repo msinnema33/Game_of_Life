@@ -2,7 +2,7 @@ import blank from './blank';
 import blinker from './blinker';
 import toad from './toad';
 import beacon from './beacon';
-import pentadeca from './pentagon';
+import pentadeca from './pentadeca';
 import pulsar from './pulsar';
 import spaceship from './spaceship';
 

@@ -23,6 +23,8 @@ import {
   spaceship,
 } from '../presets/index';
 
+import logic from '../utils/logic';
+
 const useStyles = makeStyles((theme) => ({
   gameBody: {
     maxWidth: 'lg',
@@ -56,7 +58,7 @@ const Game = (props) => {
   const classes = useStyles();
 
   //set initial specs for the grid
-  const gridSize = 25;
+  const gridSize = 30;
   const [active, setActive] = useState(makeArray(gridSize));
   const [prefab, setPrefab] = useState('');
   const [speed, setSpeed] = useState(1);
@@ -142,17 +144,8 @@ const Game = (props) => {
     if (speed > 1) setSpeed(speed / 2);
   };
 
-  const getStep = () => {
-    fetch('/step', {
-      method: 'POST',
-      cache: 'no-cache',
-      headers: { content_type: 'application/json' },
-      body: JSON.stringify({ active: active }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setActive(data['active']);
-      });
+  const getLogic = () => {
+    setActive(logic(active));
   };
 
   function useInterval(callback, delay) {
@@ -175,7 +168,7 @@ const Game = (props) => {
 
   //make call to the server at each interval
   useInterval(() => {
-    if (playStatus === 'Stop') getStep();
+    if (playStatus === 'Stop') getLogic();
   }, 1000 / speed);
 
   return (
