@@ -1,5 +1,23 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+CS Build Week:  [https://github.com/BrandyBecker/CS-Build-Week-1]
+
+
+## Rules of the game
+1. Any live cell with fewer than two live neighbors dies. (underpopulation)
+2. Any live cell with two or three neighbors lives on to the next generation.
+3. Any live cell with more than three live neighbors dies. (overpopulation)
+4. Any dead cell with exactly three live neighbors becomes alive. (reproduction) 
+
+## Turing Completeness 
+    A computing system is "Turing Complete" if it can perform arbitrary general purpose calculations.
+While the Game of Life system isn't Turing Complete in its current form, given an infinite grid size
+and unlimited computing resources (memory, CPU cycles, and storage) it could be considered Turing
+Complete and the JavaScript language itself is generally considered Turing Complete.
+    Taken from [https://en.wikipedia.org/wiki/Turing_completeness].    
+
+## Celular automata
+
 ## Available Scripts
 
 In the project directory, you can run:
