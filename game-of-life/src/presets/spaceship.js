@@ -27,23 +27,4 @@ spaceship[14][4] = true;
 spaceship[14][8] = true;
 spaceship[15][6] = true;
 
-spaceship[21][8] = true;
-spaceship[21][9] = true;
-spaceship[22][4] = true;
-spaceship[22][5] = true;
-spaceship[22][6] = true;
-spaceship[22][7] = true;
-spaceship[22][9] = true;
-spaceship[22][10] = true;
-spaceship[23][4] = true;
-spaceship[23][5] = true;
-spaceship[23][6] = true;
-spaceship[23][7] = true;
-spaceship[23][8] = true;
-spaceship[23][9] = true;
-spaceship[24][5] = true;
-spaceship[24][6] = true;
-spaceship[24][7] = true;
-spaceship[24][8] = true;
-
 export default spaceship;

@@ -19,13 +19,6 @@ beacon[7][15] = true;
 beacon[8][14] = true;
 beacon[8][15] = true;
 
-beacon[5][19] = true;
-beacon[5][20] = true;
-beacon[6][19] = true;
-beacon[7][22] = true;
-beacon[8][21] = true;
-beacon[8][22] = true;
-
 beacon[12][5] = true;
 beacon[12][6] = true;
 beacon[13][5] = true;
@@ -39,13 +32,6 @@ beacon[13][12] = true;
 beacon[14][15] = true;
 beacon[15][14] = true;
 beacon[15][15] = true;
-
-beacon[12][19] = true;
-beacon[12][20] = true;
-beacon[13][19] = true;
-beacon[14][22] = true;
-beacon[15][21] = true;
-beacon[15][22] = true;
 
 beacon[19][5] = true;
 beacon[19][6] = true;
