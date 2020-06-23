@@ -77,9 +77,9 @@ const Game = (props) => {
   };
 
   //update Generations counter
-  const updateToGenCount = () => {
-    setGenCount(genCount);
-  }
+  // const updateToGenCount = () => {
+  //   setGenCount(genCount);
+  // }
 
   //handle dropdown changes
   const updateToPresets = (e) => {
@@ -136,6 +136,7 @@ const Game = (props) => {
           return [...row];
         })
       );
+    setGenCount(0);
   }, [preset]);
 
   const handlePlayButton = (e) => {
@@ -152,6 +153,7 @@ const Game = (props) => {
 
   const getLogic = () => {
     setActive(logic(active));
+    setGenCount(genCount + 1);
   };
 
   function useInterval(callback, delay) {

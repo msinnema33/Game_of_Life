@@ -20,8 +20,8 @@ const logic = (arr) => {
       }
       newGrid.push(row);
     }
-    let genCount = 0;
-    genCount = genCount++;
+    // let genCount = 0;
+    // genCount = genCount++;
     return newGrid;
   };
   
