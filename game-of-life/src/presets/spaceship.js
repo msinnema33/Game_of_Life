@@ -4,7 +4,7 @@ const spaceship = Array(size)
   .map(() => {
     return Array(size).fill(false);
   });
-
+//    [col] [row]    
 spaceship[4][5] = true;
 spaceship[4][6] = true;
 spaceship[4][7] = true;
@@ -26,5 +26,15 @@ spaceship[13][9] = true;
 spaceship[14][4] = true;
 spaceship[14][8] = true;
 spaceship[15][6] = true;
+
+spaceship[18][19] = true;
+spaceship[18][20] = true;
+spaceship[18][21] = true;
+spaceship[18][22] = true;
+spaceship[19][23] = true;
+spaceship[21][23] = true;
+spaceship[19][19] = true;
+spaceship[20][19] = true;
+spaceship[21][20] = true;
 
 export default spaceship;

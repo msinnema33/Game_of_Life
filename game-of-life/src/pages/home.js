@@ -19,15 +19,16 @@ const useStyles = makeStyles({
   container: {
     margin: '0 auto',
     maxWidth: '1024px',
-    height: '75vh',
+    height: '80vh',
   },
   title1: {
-    fontSize: '24px',
+    fontSize: '30px',
     display: 'block',
     paddingTop: '10%',
   },
   title2: {
-    fontSize: '72px',
+    fontSize: '80px',
+    paddingBottom: '15%',
   },
   title3: {
     fontSize: '18px',
@@ -42,7 +43,9 @@ const useStyles = makeStyles({
   buttonContainer: {
     display: 'flex',
     justifyContent: 'space-around',
-    padding: '2% 15%',
+    alignContent: 'center',
+    paddingTop: '5%',
+    padding: '2% 20%',
   },
 });
 
@@ -67,7 +70,7 @@ const Home = (props) => {
             color='primary'
             className={classes.homeButton}
           >
-            Start
+            Play
           </Button>
         </Link>
         <Link to='/about' className={classes.link}>
