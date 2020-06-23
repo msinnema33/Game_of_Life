@@ -18,6 +18,9 @@ const useStyles = makeStyles({
   title2: {
     fontSize: '64px',
   },
+  title3: {
+    fontSize: '18px', 
+  },
   link: {
     textDecoration: 'none',
   },
@@ -39,6 +42,7 @@ const Home = (props) => {
         <div className={classes.container}>
           <p1 className={classes.title1}>John Conway's</p1>
           <p2 className={classes.title2}>Game of Life</p2>
+          <p3 className={classes.title3}>Implemented in JavaScript and React</p3>
         </div>
       </AppBar>
       <div className={classes.buttonContainer}>

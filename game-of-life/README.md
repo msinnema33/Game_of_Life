@@ -13,7 +13,7 @@
 
      [x] can be clicked to allow user to setup initial cell configuration
 
-     [ ] should NOT be clickable when simulation is running
+     [x] should NOT be clickable when simulation is running
 
 [x] cell objects should have these behaviours:
 
@@ -25,9 +25,9 @@
 
          [x] simulation is running and the Rules of Life caused the cell to change state
 
-[ ] text to display current generation # being displayed:
+[x] text to display current generation # being displayed:
 
-     [ ] use a timeout function to build the next generation of cells & update the display at the chosen time interval
+     [x] use a timeout function to build the next generation of cells & update the display at the chosen time interval
 
 [x] buttons to start and stop the simulation
 
@@ -55,7 +55,7 @@ Yet to-do:
 [ ] update Material UI colors from the base
 [ ] update Browser Tab text
 [ ] update favico
-[ ] Get Generation counter to work
+[x] Get Generation counter to work
 [ ] work on CSS
 [ ] work on media queries (responsive design)
 [ ] check and update accessability
@@ -63,5 +63,6 @@ Yet to-do:
 [ ] Deploy to github pages/Heroku
 [ ] Update readme with deployed link
 [ ] work on a random start initial fill
+[ ] work on a drop down for grid size
 [ ] work on getting the game to "wrap around" instead on ending at the sides/top/bottom
-[ ] check viewport meta in index.html
+[x] check viewport meta in index.html

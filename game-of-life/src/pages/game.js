@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import NavBar from '../components/navbar';
 import Grid from '../components/grid';
+import Foot from '../components/footer';
 import Container from '@material-ui/core/Container';
-import AddIcon from '@material-ui/icons/Add';
-import RemoveIcon from '@material-ui/icons/Remove';
+import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
+import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import {
   makeStyles,
   Select,
@@ -36,21 +37,21 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
     minWidth: 200,
   },
-  dropControls: {
-    // marginLeft: '5%',
-  },
+  // dropControls: {
+  //   // marginLeft: '5%',
+  // },
   gameSetting: {
     margin: '5% 5%',
   },
 }));
 
 //keep track of extra boxes outside of display == change this if I go with a wrap around style
-const additional = 2;
+const addBuffer = 2;
 const makeArray = (size) => {
-  return Array(size + additional * 2)
+  return Array(size + addBuffer * 2)
     .fill()
     .map(() => {
-      return Array(size + additional * 2).fill(false);
+      return Array(size + addBuffer * 2).fill(false);
     });
 };
 
@@ -76,9 +77,9 @@ const Game = (props) => {
     setActive(newArray);
   };
 
-  //update Generations counter
-  // const updateToGenCount = () => {
-  //   setGenCount(genCount);
+  // add changeGridSize
+  // const updateGridSize = (el) => {
+  //   setGridSize(el.target.value);
   // }
 
   //handle dropdown changes
@@ -183,7 +184,7 @@ const Game = (props) => {
     <div>
       <NavBar />
       <Container className={classes.gameGrid} maxWidth='lg'>
-        <Grid active={active} update={update} additional={additional} />
+        <Grid active={active} update={update} addBuffer={addBuffer} canClick = {playStatus} />
         <div className={classes.dropControls}>
           <FormControl className={classes.dropControl}>
             <InputLabel id='prefab-selection'>Choose your Pattern</InputLabel>
@@ -203,8 +204,8 @@ const Game = (props) => {
           </FormControl>
           <div className={classes.gameSetting}>
             <p>Speed: {speed}x</p>
-            <AddIcon onClick={speedUp} />
-            <RemoveIcon onClick={speedDown} />
+            <KeyboardArrowUpIcon onClick={speedUp} />
+            <KeyboardArrowDownIcon onClick={speedDown} />
           </div>
           <Button
             variant='contained'
@@ -226,6 +227,8 @@ const Game = (props) => {
           
         </div>
       </Container>
+
+      <Foot />
     </div>
   );
 };
