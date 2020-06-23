@@ -26,17 +26,17 @@ import {
 import logic from '../utils/logic';
 
 const useStyles = makeStyles((theme) => ({
-  gameBody: {
+  gameGrid: {
     maxWidth: 'lg',
     margin: '4% auto',
     display: 'flex',
     justifyContent: 'space-around',
   },
-  formControl: {
+  dropControl: {
     margin: theme.spacing(1),
     minWidth: 200,
   },
-  gameControls: {
+  dropControls: {
     // marginLeft: '5%',
   },
   gameSetting: {
@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-//keep track of extra boxes outside of display
+//keep track of extra boxes outside of display == change this if I go with a wrap around style
 const additional = 2;
 const makeArray = (size) => {
   return Array(size + additional * 2)
@@ -63,6 +63,7 @@ const Game = (props) => {
   const [preset, setPresets] = useState('');
   const [speed, setSpeed] = useState(1);
   const [playStatus, setPlayStatus] = useState('Start');
+  const [genCount, setGenCount] = useState(0);
 
   //update function for grid component
   const update = (x, y) => {
@@ -75,55 +76,60 @@ const Game = (props) => {
     setActive(newArray);
   };
 
-  //handle dropdown change
+  //update Generations counter
+  const updateToGenCount = () => {
+    setGenCount(genCount);
+  }
+
+  //handle dropdown changes
   const updateToPresets = (e) => {
     setPresets(e.target.value);
   };
 
   useEffect(() => {
-    //blank option
+    //blank 
     if (preset === 'blank')
       setActive(
         blank.map((row) => {
           return [...row];
         })
       );
-    //blinker option
+    //blinker 
     else if (preset === 'blinker')
       setActive(
         blinker.map((row) => {
           return [...row];
         })
       );
-    //toad option
+    //toad 
     else if (preset === 'toad')
       setActive(
         toad.map((row) => {
           return [...row];
         })
       );
-    //beacon option
+    //beacon 
     else if (preset === 'beacon')
       setActive(
         beacon.map((row) => {
           return [...row];
         })
       );
-    //pentadeca option
+    //pentadeca
     else if (preset === 'pentadeca')
       setActive(
         pentadeca.map((row) => {
           return [...row];
         })
       );
-    //pulsar option
+    //pulsar 
     else if (preset === 'pulsar')
       setActive(
         pulsar.map((row) => {
           return [...row];
         })
       );
-    //spaceship option
+    //spaceship 
     else if (preset === 'spaceship')
       setActive(
         spaceship.map((row) => {
@@ -174,10 +180,10 @@ const Game = (props) => {
   return (
     <div>
       <NavBar />
-      <Container className={classes.gameBody} maxWidth='lg'>
+      <Container className={classes.gameGrid} maxWidth='lg'>
         <Grid active={active} update={update} additional={additional} />
-        <div className={classes.gameControls}>
-          <FormControl className={classes.formControl}>
+        <div className={classes.dropControls}>
+          <FormControl className={classes.dropControl}>
             <InputLabel id='prefab-selection'>Choose your Pattern</InputLabel>
             <Select
               labelId='preset-selection'
@@ -209,12 +215,12 @@ const Game = (props) => {
           <Button
             variant='contained'
             color='success'
-            onClick={() => setPresets('blank')}
+            onClick={() => setPresets('blank') & setGenCount(0)}
             className={classes.gameSetting}
           >
             Clear
           </Button>
-            <p>Generation: "gen in curly brackets"</p>
+            <p>Generation: {genCount}</p>
           
         </div>
       </Container>
