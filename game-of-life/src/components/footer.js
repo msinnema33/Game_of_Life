@@ -11,12 +11,11 @@ const useStyles = makeStyles((theme) => ({
     bottom: '0',
     width: '100%',
     paddingBottom: '10px',
-    display: 'flex',
-    justifyContent: 'space-between',
   },
   container: {
     margin: '0 auto',
     display: 'flex',
+    justifyContent: 'space-around',
   },
   linkedInLink: {
       color: 'black',

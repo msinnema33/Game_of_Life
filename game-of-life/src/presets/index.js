@@ -1,9 +1,7 @@
 import blank from './blank';
 import blinker from './blinker';
-import toad from './toad';
 import beacon from './beacon';
-import pentadeca from './pentadeca';
 import pulsar from './pulsar';
 import spaceship from './spaceship';
 
-export { blank, blinker, toad, beacon, pentadeca, pulsar, spaceship };
+export { blank, blinker, beacon, pulsar, spaceship };

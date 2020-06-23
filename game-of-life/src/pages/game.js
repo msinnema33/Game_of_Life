@@ -18,11 +18,9 @@ import {
   beacon,
   blank,
   blinker,
-  pentadeca,
   pulsar,
   spaceship,
-  toad,
-} from '../presets/index';
+  } from '../presets/index';
 
 import logic from '../utils/logic';
 
@@ -102,24 +100,10 @@ const Game = (props) => {
           return [...row];
         })
       );
-    //toad 
-    else if (preset === 'toad')
-      setActive(
-        toad.map((row) => {
-          return [...row];
-        })
-      );
     //beacon 
     else if (preset === 'beacon')
       setActive(
         beacon.map((row) => {
-          return [...row];
-        })
-      );
-    //pentadeca
-    else if (preset === 'pentadeca')
-      setActive(
-        pentadeca.map((row) => {
           return [...row];
         })
       );
@@ -195,10 +179,8 @@ const Game = (props) => {
             >
               <MenuItem value='blank'>Blank</MenuItem>
               <MenuItem value='blinker'>Blinker</MenuItem>
-              <MenuItem value='toad'>Toad</MenuItem>
               <MenuItem value='beacon'>Beacon</MenuItem>
               <MenuItem value='pulsar'>Pulsar</MenuItem>
-              <MenuItem value='pentadeca'>Pentadecathlon</MenuItem>
               <MenuItem value='spaceship'>Spaceships</MenuItem>
             </Select>
           </FormControl>
