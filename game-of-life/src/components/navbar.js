@@ -16,7 +16,8 @@ const useStyles = makeStyles({
     fontSize: '36px',
   },
   infoIcon: {
-    paddingTop: '18px',
+    paddingTop: '25px',
+    paddingLeft: '250px',
     fontSize: '36px'
   },
   homeTitle: {
@@ -38,7 +39,7 @@ const NavBar = (props) => {
             <p className={classes.homeTitle}>Game of Life</p>
           </Link>
           <Link to='/about' className={classes.link}>
-            <InfoIcon className={classes.InfoIcon} />
+            <InfoIcon className={classes.infoIcon} />
           </Link>
           <Link to='/' className={classes.link}>
             <HomeIcon className={classes.homeIcon} />
