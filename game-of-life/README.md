@@ -33,6 +33,19 @@
 
 [x] buttons to clear the grid
 
+## Implement Custom Features
+
+Implement at least 3 of the following features:
+
+[x] Create a few sample cell configurations that users can load and run
+[ ] Add an option that creates a random cell configuration that users can run
+[ ] Add additional cell properties, like color or size, and incorporate them into your visualization
+[x] Allow users to specify the speed of the simulation
+[ ] Provide functionality to manually step through the simulation one generation at a time, as opposed to animating automatically
+[ ] Allow users to change the dimension of the grid being displayed
+[ ] Given a specific generation, calculate the configuration of cells at that point in time, and jump to that state, bypassing animation (i.e. skip ahead n generations).
+If you have an idea for a custom feature on this list, run it by your TL or instructor
+
 ## Algorithm
 
 For each cell in the current generation's grid:
@@ -53,8 +66,8 @@ For each cell in the current generation's grid:
 
 Yet to-do:
 [ ] update Material UI colors from the base
-[ ] update Browser Tab text
-[ ] update favico
+[x] update Browser Tab text
+[x] update favico
 [x] Get Generation counter to work
 [ ] work on CSS
 [ ] work on media queries (responsive design)

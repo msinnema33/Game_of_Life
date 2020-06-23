@@ -16,10 +16,11 @@ const useStyles = makeStyles({
     paddingTop: '10%',
   },
   title2: {
-    fontSize: '64px',
+    fontSize: '72px',
   },
   title3: {
-    fontSize: '18px', 
+    fontSize: '18px',
+    paddingTop: '15%', 
   },
   link: {
     textDecoration: 'none',
@@ -41,7 +42,7 @@ const Home = (props) => {
       <AppBar position='static'>
         <div className={classes.container}>
           <p1 className={classes.title1}>John Conway's</p1>
-          <p2 className={classes.title2}>Game of Life</p2>
+          <p2 className={classes.title2}>Game of Life</p2><br />
           <p3 className={classes.title3}>Implemented in JavaScript and React</p3>
         </div>
       </AppBar>
