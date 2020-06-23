@@ -10,7 +10,11 @@ const About = (props) => {
       <Container>
         <h1>All about Conway's Game of Life</h1>
         <p>
-          Add text about the game and about Conway
+          Devised by British Mathematician John H. Conway in 1970, the Game of Life
+          plays by a small set of rules. It is considered a zero-player game in which the
+          user inputs initial configuration choices, presses the start button and observes
+          how the simulation evolves. It is categorized as a cellular automaton and considered
+          Turing complete.
         </p>
         <h2>The Rules of Life</h2>
         <ol>

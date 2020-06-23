@@ -5,6 +5,9 @@ import Foot from '../components/footer';
 import Container from '@material-ui/core/Container';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
+import { createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/styles';
+import green from '@material-ui/core/colors/green';
 import {
   makeStyles,
   Select,
@@ -23,6 +26,14 @@ import {
   } from '../presets/index';
 
 import logic from '../utils/logic';
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: green[500],
+    },
+  },
+});
 
 const useStyles = makeStyles((theme) => ({
   gameGrid: {
@@ -189,9 +200,10 @@ const Game = (props) => {
             <KeyboardArrowUpIcon onClick={speedUp} />
             <KeyboardArrowDownIcon onClick={speedDown} />
           </div>
+          <ThemeProvider theme={theme}>
           <Button
             variant='contained'
-            color='success'
+            color='primary'
             onClick={handlePlayButton}
             className={classes.gameSetting}
           >
@@ -199,14 +211,14 @@ const Game = (props) => {
           </Button>
           <Button
             variant='contained'
-            color='success'
+            color='primary'
             onClick={() => setPresets('blank') & setGenCount(0)}
             className={classes.gameSetting}
           >
             Clear
           </Button>
             <p>Generation: {genCount}</p>
-          
+          </ThemeProvider>  
         </div>
       </Container>
 

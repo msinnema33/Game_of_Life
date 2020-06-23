@@ -36,6 +36,9 @@ const Foot = (props) => {
         <a
           href='https://www.linkedin.com/in/michael-sinnema/'
           className={classes.linkedInLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          alt="LinkedIn"
         >
           <LinkedInIcon fontSize='large' />
         </a>
@@ -43,6 +46,9 @@ const Foot = (props) => {
         <a
           href='https://github.com/msinnema33'
           className={classes.gitHubLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          alt="Github"
         >
           <GitHubIcon fontSize='large' />
         </a>
@@ -50,6 +56,9 @@ const Foot = (props) => {
         <a
           href='https://twitter.com/mike_sinnema'
           className={classes.twitterLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          alt="Twitter"
         >
           <TwitterIcon fontSize='large' />
         </a>

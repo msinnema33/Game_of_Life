@@ -2,7 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import AppBar from '@material-ui/core/AppBar';
+import { createMuiTheme } from '@material-ui/core/styles';
+import {ThemeProvider } from '@material-ui/styles';
+import { green } from '@material-ui/core/colors';
 import { makeStyles } from '@material-ui/core';
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: green[500],
+    },
+  },
+});
 
 const useStyles = makeStyles({
   container: {
@@ -31,7 +42,7 @@ const useStyles = makeStyles({
   buttonContainer: {
     display: 'flex',
     justifyContent: 'space-around',
-    padding: '2% 10%',
+    padding: '2% 15%',
   },
 });
 
@@ -39,6 +50,7 @@ const Home = (props) => {
   const classes = useStyles();
   return (
     <div>
+      <ThemeProvider theme={theme}>
       <AppBar position='static'>
         <div className={classes.container}>
           <p1 className={classes.title1}>John Conway's</p1>
@@ -46,11 +58,13 @@ const Home = (props) => {
           <p3 className={classes.title3}>Implemented in JavaScript and React</p3>
         </div>
       </AppBar>
+      </ThemeProvider>
       <div className={classes.buttonContainer}>
+        <ThemeProvider theme={theme}>
         <Link to='/game' className={classes.link}>
           <Button
             variant='contained'
-            color='success'
+            color='primary'
             className={classes.homeButton}
           >
             Start
@@ -59,12 +73,13 @@ const Home = (props) => {
         <Link to='/about' className={classes.link}>
           <Button
             variant='contained'
-            color='success'
+            color='primary'
             className={classes.homeButton}
           >
             About
           </Button>
         </Link>
+        </ThemeProvider>
       </div>
     </div>
   );
