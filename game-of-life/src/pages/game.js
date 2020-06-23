@@ -26,6 +26,7 @@ import {
   } from '../presets/index';
 
 import logic from '../utils/logic';
+import randomFill from '../utils/randomFill';
 
 const theme = createMuiTheme({
   palette: {
@@ -46,9 +47,6 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
     minWidth: 200,
   },
-  // dropControls: {
-  //   // marginLeft: '5%',
-  // },
   gameSetting: {
     margin: '5% 5%',
   },
@@ -68,7 +66,7 @@ const Game = (props) => {
   const classes = useStyles();
 
   //set initial specs for the grid
-  const gridSize = 30;
+  const gridSize = 40;
   const [active, setActive] = useState(makeArray(gridSize));
   const [preset, setPresets] = useState('');
   const [speed, setSpeed] = useState(1);
@@ -97,41 +95,48 @@ const Game = (props) => {
   };
 
   useEffect(() => {
-    //blank 
+    //blank (click to add your own)
     if (preset === 'blank')
       setActive(
         blank.map((row) => {
           return [...row];
         })
       );
-    //blinker 
+    //blinker demo
     else if (preset === 'blinker')
       setActive(
         blinker.map((row) => {
           return [...row];
         })
       );
-    //beacon 
+    //beacon demo
     else if (preset === 'beacon')
       setActive(
         beacon.map((row) => {
           return [...row];
         })
       );
-    //pulsar 
+    //pulsar demo
     else if (preset === 'pulsar')
       setActive(
         pulsar.map((row) => {
           return [...row];
         })
       );
-    //spaceship 
+    //spaceship demo 
     else if (preset === 'spaceship')
-      setActive(
-        spaceship.map((row) => {
-          return [...row];
-        })
-      );
+    setActive(
+      spaceship.map((row) => {
+        return [...row];
+      })
+    );
+    //sparsely populated random fill 
+    else if (preset === 'randomSparse')
+      setActive(randomFill(25, gridSize + 2*addBuffer));
+    //heavily populated random fill  
+      else if (preset === 'randomHeavy')
+      setActive(randomFill(75, gridSize + 2*addBuffer));
+
     setGenCount(0);
   }, [preset]);
 
@@ -193,6 +198,8 @@ const Game = (props) => {
               <MenuItem value='beacon'>Beacon</MenuItem>
               <MenuItem value='pulsar'>Pulsar</MenuItem>
               <MenuItem value='spaceship'>Spaceships</MenuItem>
+              <MenuItem value='randomSparse'>Sparse Random</MenuItem>
+              <MenuItem value='randomHeavy'>Heavy Random</MenuItem>
             </Select>
           </FormControl>
           <div className={classes.gameSetting}>
@@ -221,7 +228,7 @@ const Game = (props) => {
           </ThemeProvider>  
         </div>
       </Container>
-
+      
       <Foot />
     </div>
   );

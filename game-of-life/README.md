@@ -38,7 +38,7 @@
 Implement at least 3 of the following features:
 
 [x] Create a few sample cell configurations that users can load and run
-[ ] Add an option that creates a random cell configuration that users can run
+[x] Add an option that creates a random cell configuration that users can run
 [ ] Add additional cell properties, like color or size, and incorporate them into your visualization
 [x] Allow users to specify the speed of the simulation
 [ ] Provide functionality to manually step through the simulation one generation at a time, as opposed to animating automatically
@@ -65,17 +65,17 @@ For each cell in the current generation's grid:
     > assume all edge cells are permanently dead OR wrap around to far side
 
 Yet to-do:
-[ ] update Material UI colors from the base
+[x] update Material UI colors from the base
 [x] update Browser Tab text
 [x] update favico
 [x] Get Generation counter to work
-[ ] work on CSS
+[x] work on CSS
 [ ] work on media queries (responsive design)
 [ ] check and update accessability
 [ ] Add repo badges to readme
 [ ] Deploy to github pages/Heroku
 [ ] Update readme with deployed link
-[ ] work on a random start initial fill
+[x] work on a random start initial fill
 [ ] work on a drop down for grid size
 [ ] work on getting the game to "wrap around" instead on ending at the sides/top/bottom
 [x] check viewport meta in index.html
