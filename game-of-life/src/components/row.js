@@ -3,8 +3,8 @@ import React from 'react';
 const Row = (props) => {
   const row = props.active.map((display, index) => {
     let color;
-    display ? (color = 'black') : (color = '#f5f6fa');
-    //conditional here: leave off some boxes on each side of the row
+    display ? (color = '#424242') : (color = '#F5F6CE');
+    //conditional: checks that index doesn't overflow
     if (
       index >= props.addBuffer &&
       index < props.active.length - props.addBuffer
@@ -15,8 +15,8 @@ const Row = (props) => {
           key={index}
           style={{
             backgroundColor: color,
-            height: '15px',
-            width: '15px',
+            height: '11px',
+            width: '11px',
             margin: '1px',
           }}
           onClick={props.canClick === 'Start' 
@@ -27,7 +27,7 @@ const Row = (props) => {
       );
     else return null;
   });
-  //conditional here: leave off some rows on each side
+  //conditional: checks that index doesn't overflow
   if (
     props.index >= props.addBuffer &&
     props.index < props.active.length - props.addBuffer

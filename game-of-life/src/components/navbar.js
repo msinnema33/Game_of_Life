@@ -21,18 +21,21 @@ const useStyles = makeStyles({
   navbar: {
     display: 'flex',
     justifyContent: 'space-between',
+    height: '12vh',
+    alignItems: 'center',
   },
   homeIcon: {
-    paddingTop: '18px',
+    paddingTop: '8px',
     fontSize: '36px',
   },
   infoIcon: {
-    paddingTop: '25px',
+    paddingTop: '10px',
     paddingLeft: '250px',
     fontSize: '36px'
   },
   homeTitle: {
     fontSize: '24px',
+    fontWeight: 'bold',
   },
   link: { 
     textDecoration: 'none',

@@ -19,7 +19,9 @@ const useStyles = makeStyles({
   container: {
     margin: '0 auto',
     maxWidth: '1024px',
-    height: '80vh',
+    height: '75vh',
+    flexDirection: "column",
+    justifyContent: 'center',
   },
   title1: {
     fontSize: '30px',
@@ -28,11 +30,11 @@ const useStyles = makeStyles({
   },
   title2: {
     fontSize: '80px',
-    paddingBottom: '15%',
+    paddingBottom: '5%',
   },
   title3: {
     fontSize: '18px',
-    paddingTop: '15%', 
+    paddingTop: '5%', 
   },
   link: {
     textDecoration: 'none',
@@ -44,7 +46,7 @@ const useStyles = makeStyles({
     display: 'flex',
     justifyContent: 'space-around',
     alignContent: 'center',
-    paddingTop: '5%',
+    paddingTop: '3%',
     padding: '2% 20%',
   },
 });
@@ -56,9 +58,8 @@ const Home = (props) => {
       <ThemeProvider theme={theme}>
       <AppBar position='static'>
         <div className={classes.container}>
-          <p1 className={classes.title1}>John Conway's</p1>
-          <p2 className={classes.title2}>Game of Life</p2><br />
-          <p3 className={classes.title3}>Implemented in JavaScript and React</p3>
+          <p className={classes.title1}>John Conway's</p>
+          <p className={classes.title2}>Game of Life</p><br />
         </div>
       </AppBar>
       </ThemeProvider>

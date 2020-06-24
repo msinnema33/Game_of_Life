@@ -15,16 +15,16 @@ const useStyles = makeStyles((theme) => ({
   container: {
     margin: '0 auto',
     display: 'flex',
-    justifyContent: 'space-around',
+    justifyContent: 'flex-end',
   },
   linkedInLink: {
-      color: 'black',
+      color: '#424242',
   },
   gitHubLink: {
-    color: 'black',
+    color: '#424242',
   },
   twitterLink: {
-      color: 'black',
+      color: '#424242',
   },
 }));
 

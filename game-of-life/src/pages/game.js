@@ -39,7 +39,7 @@ const theme = createMuiTheme({
 const useStyles = makeStyles((theme) => ({
   gameGrid: {
     maxWidth: 'lg',
-    margin: '4% auto',
+    margin: '1% auto',
     display: 'flex',
     justifyContent: 'space-around',
   },
@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
     minWidth: 200,
   },
   gameSetting: {
-    margin: '5% 5%',
+    margin: '3% 3%',
   },
 }));
 
@@ -66,7 +66,7 @@ const Game = (props) => {
   const classes = useStyles();
 
   //set initial specs for the grid
-  const gridSize = 40;
+  const gridSize = 30;
   const [active, setActive] = useState(makeArray(gridSize));
   const [preset, setPresets] = useState('');
   const [speed, setSpeed] = useState(1);
