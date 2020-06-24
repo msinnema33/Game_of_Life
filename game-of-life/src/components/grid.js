@@ -10,7 +10,7 @@ const Grid = (props) => {
         index={index}
         update={props.update}
         canClick={props.canClick}
-        addBuffer={props.addBuffer}
+        // addBuffer={props.addBuffer}
       />
     );
   });

@@ -25,7 +25,8 @@ import {
   spaceship,
   } from '../presets/index';
 
-import logic from '../utils/logic';
+// import logic from '../utils/logic';
+import wraplogic from '../utils/wraplogic';
 import randomFill from '../utils/randomFill';
 
 const theme = createMuiTheme({
@@ -53,12 +54,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 //keep track of extra boxes outside of display == change this if I go with a wrap around style
-const addBuffer = 2;
+// const addBuffer = 2;
 const makeArray = (size) => {
-  return Array(size + addBuffer * 2)
+  return Array(size) // + addBuffer * 2)
     .fill()
     .map(() => {
-      return Array(size + addBuffer * 2).fill(false);
+      return Array(size).fill(false); // + addBuffer * 2
     });
 };
 
@@ -66,7 +67,7 @@ const Game = (props) => {
   const classes = useStyles();
 
   //set initial specs for the grid
-  const gridSize = 30;
+  const gridSize = 25;
   const [active, setActive] = useState(makeArray(gridSize));
   const [preset, setPresets] = useState('');
   const [speed, setSpeed] = useState(1);
@@ -132,10 +133,10 @@ const Game = (props) => {
     );
     //sparsely populated random fill 
     else if (preset === 'randomSparse')
-      setActive(randomFill(25, gridSize + 2*addBuffer));
+      setActive(randomFill(25, gridSize)); //+ 2*addBuffer
     //heavily populated random fill  
       else if (preset === 'randomHeavy')
-      setActive(randomFill(75, gridSize + 2*addBuffer));
+      setActive(randomFill(75, gridSize)); //  + 2*addBuffer
 
     setGenCount(0);
   }, [preset]);
@@ -153,7 +154,7 @@ const Game = (props) => {
   };
 
   const getLogic = () => {
-    setActive(logic(active));
+    setActive(wraplogic(active)); // changed out logic for wrap logic
     setGenCount(genCount + 1);
   };
 
@@ -180,11 +181,11 @@ const Game = (props) => {
     if (playStatus === 'Stop') getLogic();
   }, 1000 / speed);
 
-  return (
+  return ( // addBuffer={addBuffer} from line 188 (Grid)
     <div>
       <NavBar />
       <Container className={classes.gameGrid} maxWidth='lg'>
-        <Grid active={active} update={update} addBuffer={addBuffer} canClick = {playStatus} />
+        <Grid active={active} update={update}  canClick = {playStatus} /> 
         <div className={classes.dropControls}>
           <FormControl className={classes.dropControl}>
             <InputLabel id='prefab-selection'>Choose your Pattern</InputLabel>

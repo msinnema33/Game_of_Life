@@ -1,13 +1,13 @@
 import React from 'react';
 
 const Row = (props) => {
-  const row = props.active.map((display, index) => {
+  const row = props.active.map((display, index) => { 
     let color;
     display ? (color = '#424242') : (color = '#F5F6CE');
     //conditional: checks that index doesn't overflow
     if (
-      index >= props.addBuffer &&
-      index < props.active.length - props.addBuffer
+    //   index >= props.addBuffer &&
+      index < props.active.length
     )
       return (
         <div
@@ -27,10 +27,10 @@ const Row = (props) => {
       );
     else return null;
   });
-  //conditional: checks that index doesn't overflow
+  // conditional: checks that index doesn't overflow
   if (
-    props.index >= props.addBuffer &&
-    props.index < props.active.length - props.addBuffer
+    // props.index >= props.addBuffer &&
+    props.index < props.active.length // - props.addBuffer
   )
     return (
       <div className='row' style={{ display: 'flex' }}>
