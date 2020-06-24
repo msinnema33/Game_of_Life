@@ -1,8 +1,8 @@
 const logic = (arr) => {
     const newGrid = [];
-    for (let i = 0; i < arr.length; i++) {
+    for (let i = 0; i < arr.length; i++) { //outer = cols
       const row = [];
-      for (let j = 0; j < arr.length; j++) {
+      for (let j = 0; j < arr.length; j++) { // inner = rows
         let neighbors = 0;
         if (i > 0 && j > 0 && arr[i - 1][j - 1]) neighbors++;
         if (i > 0 && arr[i - 1][j]) neighbors++;
